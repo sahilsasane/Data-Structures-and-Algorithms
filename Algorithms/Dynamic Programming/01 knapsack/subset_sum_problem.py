@@ -15,11 +15,11 @@ def subsetsum(arr, sum, n):
                 t[i][j] = t[i - 1][j - arr[i - 1]] or t[i - 1][j]
             elif arr[i - 1] > j:
                 t[i][j] = t[i - 1][j]
-    return t[n, sum]
+    return t[n, sum], t
 
 
 if __name__ == "__main__":
     arr = [2, 3, 7, 8, 10]
     sum = 15
-    n = 5
-    print(subsetsum(arr, sum, n))
+    n = len(arr)
+    print(subsetsum(arr, sum, n)[0])

@@ -1,4 +1,5 @@
 import numpy as np
+import time
 
 
 def knap_recursive(wt, val, W, n):
@@ -41,15 +42,27 @@ def knap_top_down(wt, val, W, n):
                 t[i][j] = max(val[i - 1] + t[i - 1][j - wt[i - 1]], t[i - 1][j])
             else:
                 t[i][j] = t[i - 1][j]
-    print(t)
+    # print(t)
     return t[n][W]
 
 
 if __name__ == "__main__":
-    wt = [1, 2, 3]
-    val = [10, 15, 40]
-    W = 6
-    n = 3
+    wt = [i for i in range(1, 25)]
+    val = [i for i in range(1, 25)]
+    W = 200
+    n = len(wt)
+
+    a = time.time()
     print(knap_recursive(wt, val, W, n))
+    b = time.time()
+    print("time", b - a)
+
+    a = time.time()
     print(knap_memoisation(wt, val, W, n))
+    b = time.time()
+    print("time", b - a)
+
+    a = time.time()
     print(knap_top_down(wt, val, W, n))
+    b = time.time()
+    print("time", b - a)

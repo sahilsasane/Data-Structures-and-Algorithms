@@ -35,9 +35,10 @@ def lcs_top_down(x, y, m, n):
                 t[i, j] = 1 + t[i - 1, j - 1]
             else:
                 t[i, j] = max(t[i, j - 1], t[i - 1, j])
+    print(t)
     s = ""
     i, j = m, n
-    while i > 0 or j > 0:
+    while i > 0 and j > 0:
         if x[i - 1] == y[j - 1]:
             s += x[i - 1]
             i -= 1
@@ -51,10 +52,10 @@ def lcs_top_down(x, y, m, n):
 
 
 if __name__ == "__main__":
-    x = "acbcf"
-    y = "abcd"
+    x = "aacabdkacaa"
+    y = "aacakdbacaa"
     m = len(x)
     n = len(y)
-    print(lcs_recursive(x, y, m, n))
-    print(lcs_memoize(x, y, m, n))
+    # print(lcs_recursive(x, y, m, n))
+    # print(lcs_memoize(x, y, m, n))
     print(lcs_top_down(x, y, m, n))

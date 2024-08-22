@@ -1,1 +1,4 @@
-34510810031
+String: BBBSSC
+First set of integers: 6 4 1
+Second set of integers: 1 2 3
+Single integer: 4

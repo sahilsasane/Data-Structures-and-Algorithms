@@ -3,6 +3,8 @@
         "*.ejs": "html",
         "xstring": "cpp",
         "iostream": "cpp",
-        "xiosbase": "cpp"
+        "xiosbase": "cpp",
+        "iosfwd": "cpp",
+        "limits": "cpp"
     }
 }

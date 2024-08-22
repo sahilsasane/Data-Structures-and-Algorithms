@@ -9,26 +9,25 @@ int main() {
     #endif
     ios::sync_with_stdio(false);
     cin.tie(0);
-    string s;
-    cin >> s;
+    
+    ll x1,x2,x3;
+    cin>>x1>>x2>>x3;
+    ll i = min({x1,x2,x3}), j = max({x1,x2,x3});
+    ll dist = LLONG_MAX;
+    ll pos;
 
-    // Reading the second line (three integers)
-    int a, b, c;
-    cin >> a >> b >> c;
-
-    // Reading the third line (three integers)
-    int x, y, z;
-    cin >> x >> y >> z;
-
-    // Reading the fourth line (single integer)
-    int k;
-    cin >> k;
-
-    // Output the values to verify they are read correctly
-    cout << "String: " << s << endl;
-    cout << "First set of integers: " << a << " " << b << " " << c << endl;
-    cout << "Second set of integers: " << x << " " << y << " " << z << endl;
-    cout << "Single integer: " << k << endl;
-
+    while(i<=j){
+        ll mid = (i + j) / 2;
+        ll temp = abs(x1-mid) + abs(x2-mid) + abs(x3-mid);
+        if(dist > temp){
+            dist = temp;
+            i = mid+1;
+            pos = mid;
+        }else{
+            j = mid-1;
+        }
+        if (mid == i || mid == j) break;
+    }
+    cout<<dist;
     return 0;
 }

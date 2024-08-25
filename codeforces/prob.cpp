@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 #define ll long long
 
@@ -10,24 +11,30 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
     
-    ll x1,x2,x3;
-    cin>>x1>>x2>>x3;
-    ll i = min({x1,x2,x3}), j = max({x1,x2,x3});
-    ll dist = LLONG_MAX;
-    ll pos;
-
-    while(i<=j){
-        ll mid = (i + j) / 2;
-        ll temp = abs(x1-mid) + abs(x2-mid) + abs(x3-mid);
-        if(dist > temp){
-            dist = temp;
-            i = mid+1;
-            pos = mid;
-        }else{
-            j = mid-1;
-        }
-        if (mid == i || mid == j) break;
+    ll n;
+    cin >> n;
+    vector <ll> vec;
+    ll max_index = 0, min_index = 0;
+    for(ll i = 0; i< n; i++){
+        ll k;
+        cin >> k;
+        vec.push_back(k);
+        if(k > vec[max_index]) max_index =  i;
+        if(k <= vec[min_index]) min_index = i;
     }
-    cout<<dist;
+     if (n == 2) {
+        if (vec[0] >= vec[1]) {
+            cout << 0;
+        } else {
+            cout << 1;
+        }
+    } else {
+        if (min_index < max_index) {
+            cout << max_index + n - (min_index + 2);
+        } else {
+            cout << max_index + n - min_index - 1;
+        }
+    } 
+
     return 0;
 }

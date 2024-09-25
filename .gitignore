@@ -1,5 +1,6 @@
 Accenture
-codeforces/input.txt
-codeforces/output.txt
-codeforces/prob.exe
-codeforces/prob.bin
+./codeforces\input.txt
+./codeforces/output.txt
+./codeforces/prob.exe
+./codeforces/.cph
+

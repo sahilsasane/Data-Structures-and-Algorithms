@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Integer> cars = new ArrayList<Integer>();
+        ArrayList<Integer> cars = new ArrayList();
         cars.add(1);
         cars.add(2);
         cars.add(3);
@@ -23,7 +23,7 @@ public class Main {
             System.out.print(cars.get(i));
         }
         // cars.clear();
-        LinkedList<String> llcars = new LinkedList<String>();
+        LinkedList<String> llcars = new LinkedList();
         llcars.addFirst("Hello");
         llcars.addLast("bye");
         // llcars.removeFirst();
@@ -31,7 +31,7 @@ public class Main {
         // llcars.getFirst();
         // llcars.getLast();
 
-        HashMap<String, String> capitalCities = new HashMap<String, String>();
+        HashMap<String, String> capitalCities = new HashMap();
         capitalCities.put("England", "London");
         capitalCities.put("Germany", "Berlin");
         capitalCities.put("Norway", "Oslo");
@@ -46,7 +46,7 @@ public class Main {
             System.out.println("key: " + i + " value: " + capitalCities.get(i));
         }
 
-        HashSet<String> setcars = new HashSet<String>(); // unique items
+        HashSet<String> setcars = new HashSet(); // unique items
         // .contains(), .remove() .clear() .size()
 
         Iterator<Integer> it = cars.iterator();

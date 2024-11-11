@@ -1,8 +1,0 @@
-{
-    "files.associations": {
-        "*.tcc": "c",
-        "limits": "c",
-        "stdio.h": "c",
-        "stdlib.h": "c"
-    }
-}
